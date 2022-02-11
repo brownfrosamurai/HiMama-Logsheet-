@@ -1,0 +1,37 @@
+<h6>Welcome {{name}} </h6>
+<h3>Dashboard</h3>
+{{!-- <p>Here is your timesheet</p> --}}
+{{#if timelogs}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Timeout</th>
+                <th>Timein</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {{#each timelogs}}
+                <tr>
+                    <td>{{description}}</td>
+                    <td> {{formatDate createdAt 'MMMM Do YYYY'}} </td>
+                    <td> {{formatDate clockout 'h:mm:ss a'}} </td>
+                     {{#if clockin}}
+                    <td> {{formatDate clockin 'h:mm:ss a'}} </td>
+                    <td><button class="btn" disabled="true">clockin</button></td>
+                    {{else}}
+                    <td>Still Away</td>
+                    <td><form action="/timelogs/{{_id}}" method="POST">
+                    <input type="submit" value="Clock In" class="btn">
+                    </form></td>
+                    {{/if}}
+                    <td></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have no time logs available</p>
+{{/if}}
