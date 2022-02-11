@@ -13,17 +13,22 @@
   "license": "ISC",
   "dependencies": {
     "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
+    "express-mongo-sanitize": "^2.2.0",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
+    "helmet": "^5.0.2",
+    "hpp": "^0.2.3",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mongoose": "^6.2.1",
     "morgan": "^1.10.0",
     "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

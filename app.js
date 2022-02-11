@@ -7,6 +7,10 @@ const morgan = require('morgan')
 const session = require('express-session')
 const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
+const xss = require('xss-clean')
+const helmet = require('helmet')
+const hpp = require('hpp')
+const mongoSanitize = require('express-mongo-sanitize');
 const { engine } = require('express-handlebars')
 
 const connectDB = require('./config/db')
@@ -26,10 +30,18 @@ const app = express()
 // Log request
 app.use(morgan('combined'))
 
+// Sanitize data
+app.use(mongoSanitize());
+
+// Set security headers
+app.use(helmet());
+
+// Prevent cross site scripting (XSS attacks)
+app.use(xss());
+
 // Body paser 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
 
 // Handlebars 
 // Initialize view engine 
