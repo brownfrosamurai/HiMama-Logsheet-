@@ -9,7 +9,7 @@ npm install
 
 ## Create application environment variables
 ```
-Create a .env file in the config folder and copy the content of config/config.env.env into it and fill appropriately
+Edit config/config.env.env to config/config.env and fill in the required parameters 
 ```
 
 ## Run Application

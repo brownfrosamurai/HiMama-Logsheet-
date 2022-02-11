@@ -33,9 +33,6 @@ app.use(morgan('combined'))
 // Sanitize data
 app.use(mongoSanitize());
 
-// Set security headers
-// app.use(helmet());
-
 // Prevent cross site scripting (XSS attacks)
 app.use(xss());
 
