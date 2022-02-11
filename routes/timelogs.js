@@ -11,7 +11,7 @@ router.get('/create', ensureAuth, (req, res) => {
     res.render('timelogs/create')
 })
 
-// @desc       Clock user in
+// @desc       Clock user out
 // @route      POST /timelogs
 router.post('/', ensureAuth, async (req, res) => {
     try {
@@ -19,6 +19,12 @@ router.post('/', ensureAuth, async (req, res) => {
             user: req.user.id,
             clockout: Date.now(),
             description: req.body.description
+        }
+
+        if(!description) {
+            return res.render('errors/400', {
+                error: "Missing required parameters"
+            })
         }
 
         const timelogs = await Timelog.find({ user: req.user.id })
@@ -73,7 +79,7 @@ router.post('/:id', ensureAuth, async (req, res) => {
             status: true
         })
 
-        res.redirect('/dashboard')
+        redirect('/dashboard')
 
     } catch (error) {
         console.error(error)
@@ -90,7 +96,7 @@ router.get('/', ensureAuth, async (req, res) => {
             .sort({ clockout: 'desc' })
             .lean()
 
-        res.render('timelogs/index', {
+        res.status(200).render('timelogs/index', {
             timelogs
         })
     } catch (error) {
