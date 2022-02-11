@@ -34,13 +34,14 @@ app.use(morgan('combined'))
 app.use(mongoSanitize());
 
 // Set security headers
-app.use(helmet());
+// app.use(helmet());
 
 // Prevent cross site scripting (XSS attacks)
 app.use(xss());
 
 // Body paser 
 app.use(express.urlencoded({ extended: false }))
+
 app.use(express.json())
 
 // Handlebars 
