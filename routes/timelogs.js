@@ -79,7 +79,7 @@ router.post('/:id', ensureAuth, async (req, res) => {
             status: true
         })
 
-        redirect('/dashboard')
+        res.redirect('/dashboard')
 
     } catch (error) {
         console.error(error)
