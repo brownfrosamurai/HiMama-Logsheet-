@@ -53,20 +53,6 @@ app.use(function (req, res, next) {
     next()
 })
 
-app.use(function(req, res, next) {
-    if (process.env.NODE_ENV === "production") {
-        const reqType = req.headers["x-forwarded-proto"];
-        // if not https redirect to https unless logging in using OAuth
-        if (reqType !== "https") {
-            req.url.indexOf("auth/google/callback") !== -1
-              ? next()
-              : res.redirect("https://" + req.headers.host + req.url);
-        } 
-    } else {
-        next();
-    }
-});
-
 // Set up static files 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', './views');
