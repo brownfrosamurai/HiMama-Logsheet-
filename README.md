@@ -28,7 +28,7 @@ https://himama-logsheet.herokuapp.com/
 
 - Initialized an express server on Node.js runtime environment.
 
-- MVC architectural design pattern in implementing this requirements placing emphasis on the models, views, and the controllers(routes).
+- I employed the MVC architectural design pattern in implementing these requirements placing emphasis on the models, views, and the controllers(routes).
 
 - Handlebars templating engine to render views.
 
@@ -53,7 +53,7 @@ I found this to be the simplest schema implementation I could do.
 - I would also consider implementing an error middleware to better handle errors and exceptions
 - I would consider improving the application's performance, by leveraging the pm2 tool.
 
-
+###
 - Version: 1.0.0
 - Licence: ISC
 - Author: Oluwafemi Meduna
