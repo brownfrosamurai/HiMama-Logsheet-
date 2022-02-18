@@ -18,27 +18,32 @@ The following command starts the application on port 3000
 npm start
 ```
 
+## Live@
+```
+https://himama-logsheet.herokuapp.com/
+```
+
 ## Development Process
 - Link to application diagram: https://lucid.app/documents/view/25158cad-1848-457b-b208-4aaf0f774697
 
-- I took some time to understand the requirements of the  challenge and then, and I sketched a plan to achieve my desired result. I used "express" has a tool to initialize a server on Node.js runtime environment.
+- Initialized an express server on Node.js runtime environment.
 
-- I employed the MVC architectural design pattern in implementing this requirements placing emphasis on the models, views, and the controllers(routes).
+- MVC architectural design pattern in implementing this requirements placing emphasis on the models, views, and the controllers(routes).
 
-- In my views folder I used "handlebars" as a templating engine to develop the views.
+- Handlebars templating engine to render views.
 
-- I considered integrating with google API's through "passport" to simplify the onboarding process for new and returnning users of the application.
+- Integrate google API's through "passport.js" to simplify the onboarding process for new and returnning users of the application.
 
-- I also used POSTMAN to test the initial enpoints which where created to serve web views.
+- POSTMAN to test the initial enpoints which where created to serve web views.
 
 ## Schema Design
  This application makes use of two models: 
  - User
  - Timelog
-
+```
 The User model has a one to many relationship with the Timelog where one User can have multiple records of time log.
 I found this to be the simplest schema implementation I could do.
-
+```
 ## If given another day to work on this application
 - I would consider writing and running some more tests to ensure the application is stable.
 
