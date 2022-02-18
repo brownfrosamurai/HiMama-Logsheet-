@@ -28,13 +28,13 @@ https://himama-logsheet.herokuapp.com/
 
 - Initialized an express server on Node.js runtime environment.
 
-- I employed the MVC architectural design pattern in implementing these requirements placing emphasis on the models, views, and the controllers(routes).
+- MVC architectural design pattern in implementing requirements and placing emphasis on the models, views, and the controllers(routes).
 
 - Handlebars templating engine to render views.
 
 - Integrate google API's through "passport.js" to simplify the onboarding process for new and returnning users of the application.
 
-- POSTMAN to test the initial enpoints which where created to serve web views.
+- POSTMAN to test enpoints.
 
 ## Schema Design
  This application makes use of two models: 
@@ -52,6 +52,8 @@ I found this to be the simplest schema implementation I could do.
 - I would consider separating concerns of the backend and the frontend, maybe use React.js for development on the frontend since it pairs well with Node.js.
 - I would also consider implementing an error middleware to better handle errors and exceptions
 - I would consider improving the application's performance, by leveraging the pm2 tool.
+
+###
 
 ###
 - Version: 1.0.0
