@@ -21,7 +21,7 @@ router.post('/', ensureAuth, async (req, res) => {
             description: req.body.description
         }
 
-        if(!description) {
+        if(!req.body.description) {
             return res.render('errors/400', {
                 error: "Missing required parameters"
             })
@@ -79,7 +79,7 @@ router.post('/:id', ensureAuth, async (req, res) => {
             status: true
         })
 
-        redirect('/dashboard')
+        res.redirect('/dashboard')
 
     } catch (error) {
         console.error(error)
